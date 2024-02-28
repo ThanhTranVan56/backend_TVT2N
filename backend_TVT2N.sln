@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34607.119
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "backend_TVT2N", "backend_TVT2N\backend_TVT2N.csproj", "{8986B780-320F-446B-85F8-A7B9CC48BDFC}"
+	ProjectSection(ProjectDependencies) = postProject
+		{6972E2BD-0C7D-4566-93ED-7ED057B70860} = {6972E2BD-0C7D-4566-93ED-7ED057B70860}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Libst", "Libst\Libst.csproj", "{6972E2BD-0C7D-4566-93ED-7ED057B70860}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8986B780-320F-446B-85F8-A7B9CC48BDFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8986B780-320F-446B-85F8-A7B9CC48BDFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8986B780-320F-446B-85F8-A7B9CC48BDFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8986B780-320F-446B-85F8-A7B9CC48BDFC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6972E2BD-0C7D-4566-93ED-7ED057B70860}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6972E2BD-0C7D-4566-93ED-7ED057B70860}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6972E2BD-0C7D-4566-93ED-7ED057B70860}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6972E2BD-0C7D-4566-93ED-7ED057B70860}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {ABBF3398-9243-4856-A15D-98BB197BDF48}
+	EndGlobalSection
+EndGlobal

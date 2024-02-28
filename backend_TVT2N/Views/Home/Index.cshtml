@@ -1,0 +1,72 @@
+﻿@model IPagedList<Libs.Entity.Order>
+@using X.PagedList.Mvc.Core; @*import this so we get our HTML Helper*@
+@using X.PagedList;
+@using backend_TVT2N.Common;
+<link href="~/css/indexcss.css" rel="stylesheet" />
+<link href="~/css/pagelists.css" rel="stylesheet" />
+<section class="content" style="min-height:750px">
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">Danh sách đơn hàng</h3>
+        </div>
+        @if (Model != null && Model.Any())
+        {
+            <table>
+                <thead>
+                    <tr>
+                        <th>STT</th>
+                        <th>Code</th>
+                        <th>Name</th>
+                        <th>Address</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                        <th>Status Payment</th>
+                        <th>Status Order</th>
+                        <th>Create Date</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model != null && Model.Any())
+                    {
+                        var i = ((ViewBag.Page - 1) * ViewBag.PageSize) + 1;
+                        @foreach (var order in Model)
+                        {
+                            <tr>
+                                <td>@(i)</td>
+                                <td>@order.Code</td>
+                                <td>@order.Name</td>
+                                <td>@order.Address</td>
+                                <td>@order.Phone</td>
+                                <td>@order.Email</td>
+                                <td>@GettingType.GetStatusPayment(order.StatusPayment)</td>
+                                <td>@GettingType.GetStatusOrder(order.StatusOrder)</td>
+                                <td>@Common.FormatDate(order.CreateDate)</td>
+                                <td>
+                                    <a href="/home/details/@order.Id" class="btn btn-sm btn-outline-success">Xem</a>
+                                </td>
+                            </tr>
+                            i++;
+                        }
+                    }
+
+                </tbody>
+            </table>
+            <div class="row justify-content-end">
+                <div class="col-6"></div>
+                <div class="col-6" style="text-align:right;">
+                    @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+                </div>
+
+            </div>
+            
+        }
+        else
+        {
+            <p>No orders found.</p>
+        }
+        <div class="card-footer" style="padding-top: 20px">
+        </div>
+    </div>
+</section>
+
